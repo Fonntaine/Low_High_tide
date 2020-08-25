@@ -34,15 +34,15 @@ def listToString(s):
 
 textmessage = listToString(ocean_data)
 
-account_sid = 'ACea696ceb68df62630d618f45f9484e8a'
-auth_token = 'cf1f251f05041854254defc234334ddc'
+account_sid = 'Your account sid'
+auth_token = 'Your auth token'
 client = Client(account_sid, auth_token)
 
 
 
-from_whatsapp_number='whatsapp:+14155238886'
+from_whatsapp_number='whatsapp:+(Your twilio number)'
 
-to_whatsapp_number='whatsapp:+17192050733'
+to_whatsapp_number='whatsapp:+(Your number)'
 
 client.messages.create(body=(textmessage), from_=from_whatsapp_number, 
                         to=to_whatsapp_number)
