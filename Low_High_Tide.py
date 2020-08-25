@@ -19,6 +19,12 @@ ocean_data = all_days[1].text # there is one hidden `div` which I have to skip t
 
 driver.quit()
 
+driver.get('https://ahoy.twilio.com/')
+
+WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="msw-js-tide-list"]')))
+
+all_days = driver.find_elements_by_xpath('//*[@id="msw-js-tide-list"]/div')
+
 def listToString(s):  
     str1 = ""  
     for ele in s:  
@@ -29,7 +35,7 @@ def listToString(s):
 textmessage = listToString(ocean_data)
 
 account_sid = 'ACea696ceb68df62630d618f45f9484e8a'
-auth_token = '4b661ee67dc65d414ac6bdc7f1ae0bb0'
+auth_token = 'cf1f251f05041854254defc234334ddc'
 client = Client(account_sid, auth_token)
 
 
